@@ -1059,8 +1059,6 @@ header {
 
 .clinics {
   position: relative; }
-  .clinics .slick-dots {
-    margin: 40px auto 0; }
   .clinics .slick-slide .clinics-slider-box {
     margin-top: 101px; }
   .clinics .slick-center .clinics-slider-box {
@@ -1305,6 +1303,8 @@ footer {
   max-width: 1078px; }
 
 .modal-content {
+  border: none;
+    border-radius: 4px;
   background: #282E32;
   padding: 52px; }
   .modal-content h3 {
@@ -1359,6 +1359,58 @@ footer {
   .modal-body .map-address {
     bottom: auto;
     top: 24px; }
+
+#resultModal .modal-dialog {
+  max-width: 1306px; }
+
+.result-slider {
+  padding: 0 80px; }
+  .result-slider .slick-next {
+    right: 0; }
+  .result-slider .slick-prev {
+    left: 0; }
+
+.result-slider-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+
+.result-slider-box {
+  width: 50%; }
+  .result-slider-box__name {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 24px;
+    font-size: 36px;
+    font-family: "Lora", sans-serif; }
+
+.result-slider-box__img {
+  width: 100%;
+  height: 462px;
+  position: relative;
+  overflow: hidden; }
+  .result-slider-box__img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+.btn-result-view {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 0 49px; }
+
+.result-slider-box-before img {
+  opacity: .05; }
 
 /*==========  Desktop First  ==========*/
 /* Large Devices, Wide Screens */

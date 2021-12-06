@@ -39,6 +39,25 @@ $('.clinics-slider').slick({
     nextArrow: '<button type="button" class="slick-next"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-right"></use></svg></button>'
 });
 
+$('.result-slider').slick({
+    slidesToShow: 1,
+    fade: true,
+    dots: true,
+    prevArrow: '<button type="button" class="slick-prev"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-left"></use></svg></button>',
+    nextArrow: '<button type="button" class="slick-next"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-right"></use></svg></button>'
+});
+
+
+$('.modal').on('shown.bs.modal', function (e) {
+    $('.slick-slider').slick('setPosition');
+});
+
+$('.btn-result-view').on('click', function (e) {
+    e.preventDefault();
+    $('.btn-result-view').hide();
+    $('.result-slider-box-before').removeClass('result-slider-box-before');
+});
+
 // range
 window.addEventListener("DOMContentLoaded", () => {
     let range1 = new rSlider({
