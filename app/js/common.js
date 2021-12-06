@@ -1,5 +1,5 @@
 $(window).scroll(function () {
-    if ($(this).scrollTop() > 150) {
+    if ($(this).scrollTop() > 50) {
         $('header').addClass('fixed');
     } else {
         $('header').removeClass('fixed');
@@ -26,7 +26,27 @@ $('.reviews-slider').slick({
     variableWidth: true,
     centerMode: true,
     prevArrow: '<button type="button" class="slick-prev"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-left"></use></svg></button>',
-    nextArrow: '<button type="button" class="slick-next"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-right"></use></svg></button>'
+    nextArrow: '<button type="button" class="slick-next"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-right"></use></svg></button>',
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 1,
+                arrows: false,
+                variableWidth: false,
+                centerMode: false,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                fade: true
+            }
+        }
+    ]
 });
 
 $('.clinics-slider').slick({
@@ -36,7 +56,21 @@ $('.clinics-slider').slick({
     centerMode: true,
     appendArrows: '.clinics-slider__nav',
     prevArrow: '<button type="button" class="slick-prev"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-left"></use></svg></button>',
-    nextArrow: '<button type="button" class="slick-next"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-right"></use></svg></button>'
+    nextArrow: '<button type="button" class="slick-next"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-right"></use></svg></button>',
+    responsive: [
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 1,
+                variableWidth: false,
+                centerMode: false,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                fade: true,
+                appendDots: '.clinics-slider__nav',
+            }
+        }
+    ]
 });
 
 $('.result-slider').slick({
@@ -69,7 +103,7 @@ window.addEventListener("DOMContentLoaded", () => {
 $('[name="phone"]').mask('+7 (999) 999 - 99 - 99');
 
 $('.btn-burger').on('click', function () {
-   $('.mobile-menu').fadeToggle();
+    $('.mobile-menu').fadeToggle();
 });
 
 $('.btn-close').on('click', function (e) {
@@ -100,60 +134,58 @@ $(function () {
         });
 });
 
-$( ".datepicker" ).datepicker();
+$(".datepicker").datepicker();
 
-$(document).ready(function () {
-    class rSlider {
-        constructor(args) {
-            this.el = document.querySelector(args.element);
-            this.min = +this.el.min || 0;
-            this.max = +this.el.max || 100;
-            this.step = +this.el.step || 1;
-            this.tick = args.tick || this.step;
-            this.addTicks();
-            this.dataRange = document.createElement("div");
-            this.dataRange.className = "data-range";
-            this.el.parentElement.appendChild(this.dataRange, this.el);
+class rSlider {
+    constructor(args) {
+        this.el = document.querySelector(args.element);
+        this.min = +this.el.min || 0;
+        this.max = +this.el.max || 100;
+        this.step = +this.el.step || 1;
+        this.tick = args.tick || this.step;
+        this.addTicks();
+        this.dataRange = document.createElement("div");
+        this.dataRange.className = "data-range";
+        this.el.parentElement.appendChild(this.dataRange, this.el);
+        this.updatePos();
+        this.el.addEventListener("input", () => {
             this.updatePos();
-            this.el.addEventListener("input", () => {
-                this.updatePos();
-            });
-        }
+        });
+    }
 
-        addTicks() {
-            let wrap = document.createElement("div");
-            wrap.className = "range";
-            this.el.parentElement.insertBefore(wrap, this.el);
-            wrap.appendChild(this.el);
-            let ticks = document.createElement("div");
-            ticks.className = "range-ticks";
-            wrap.appendChild(ticks);
-            for (let t = this.min; t <= this.max; t += this.tick) {
-                let tick = document.createElement("span");
-                tick.className = "range-tick";
-                ticks.appendChild(tick);
-                let tickText = document.createElement("span");
-                tickText.className = "range-tick-text";
-                tick.appendChild(tickText);
-                tickText.textContent = t;
-            }
-        }
-
-        getRangePercent() {
-            let max = this.el.max,
-                min = this.el.min,
-                relativeValue = this.el.value - min,
-                ticks = max - min,
-                percent = relativeValue / ticks;
-            return percent;
-        }
-
-        updatePos() {
-            let percent = this.getRangePercent(),
-                left = percent * 100,
-                emAdjust = percent * 3;
-            this.dataRange.style.left = `calc(${left}% - ${emAdjust}em)`;
-            // this.dataRange.innerHTML = this.el.value;
+    addTicks() {
+        let wrap = document.createElement("div");
+        wrap.className = "range";
+        this.el.parentElement.insertBefore(wrap, this.el);
+        wrap.appendChild(this.el);
+        let ticks = document.createElement("div");
+        ticks.className = "range-ticks";
+        wrap.appendChild(ticks);
+        for (let t = this.min; t <= this.max; t += this.tick) {
+            let tick = document.createElement("span");
+            tick.className = "range-tick";
+            ticks.appendChild(tick);
+            let tickText = document.createElement("span");
+            tickText.className = "range-tick-text";
+            tick.appendChild(tickText);
+            tickText.textContent = t;
         }
     }
-});
+
+    getRangePercent() {
+        let max = this.el.max,
+            min = this.el.min,
+            relativeValue = this.el.value - min,
+            ticks = max - min,
+            percent = relativeValue / ticks;
+        return percent;
+    }
+
+    updatePos() {
+        let percent = this.getRangePercent(),
+            left = percent * 100,
+            emAdjust = percent * 3;
+        this.dataRange.style.left = `calc(${left}% - ${emAdjust}em)`;
+        // this.dataRange.innerHTML = this.el.value;
+    }
+}

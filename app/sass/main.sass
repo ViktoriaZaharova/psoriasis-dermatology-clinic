@@ -335,6 +335,9 @@ header
       &:hover
         &:before
           background: $accent
+    .active
+      &:before
+        background: $accent
 
 .phone-tel
   color: #fff
@@ -425,14 +428,15 @@ header
     padding: 0 28px
     font-size: 16px
 
-.btn-close
-  display: flex
-  align-items: center
-  justify-content: center
-  padding: 10px
-  stroke: $accent
-  width: 48px
-  height: 48px
+  .btn-close
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 10px
+    stroke: $accent
+    width: 48px
+    height: 48px
+    margin: 0 0 0 auto
 
 
 //home
@@ -466,7 +470,8 @@ header
     background: linear-gradient(110.04deg, rgba(11, 12, 13, 0.93) 36.64%, rgba(17, 20, 20, 0.95) 100%)
     z-index: -1
   .btn
-    width: fit-content
+    max-width: 224px
+    width: 100%
   .box-text
     max-width: 480px
     width: 100%
@@ -503,7 +508,7 @@ header
   position: absolute
   z-index: 1
   bottom: 32px
-  right: 0
+  right: 20px
   width: 225px
   height: 225px
   border: 1px solid $accent
@@ -589,6 +594,7 @@ header
   h3
     color: $accent
     width: fit-content
+    margin: 0
   &__body
     font-size: 18px
     line-height: 150%
@@ -778,6 +784,9 @@ header
 .reviews
   h2
     margin: 0
+  .links-social
+    margin: 0 0 0 auto
+    justify-content: flex-end
 
 .reviews-slider
   margin: 72px 0 0
@@ -902,6 +911,7 @@ header
     justify-content: space-between
     border: none
     cursor: pointer
+    margin: 0
     h3
       padding: 0 42px 0 0
       margin: 0
@@ -1243,6 +1253,10 @@ footer
 .result-slider-box-before
   img
     opacity: .05
+
+.ui-widget.ui-widget-content
+  border: none
+  background: $accent
 
 
 @import "media"
