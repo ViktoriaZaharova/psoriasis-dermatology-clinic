@@ -100,19 +100,16 @@
   .range-wrap
     margin: 24px 0 48px
 
-  .range-ticks
-    left: 14px
-
-  .data-range
+  .radio-custom
     width: 34px
     height: 34px
 
-  .range-tick
-    font-size: 28px
-    padding: 0 0 41px
-
-  .range:before
+  .range-wrap:before
     bottom: 17px
+
+  .radio
+    font-size: 28px
+
 
   .time-course .btn
     margin: 32px 0 0
@@ -339,8 +336,8 @@
       max-width: 590px
       margin: 0 auto
 
-  .range-slider
-    margin: 0 auto
+  .range-wrap
+    margin: 24px auto 48px
     max-width: 484px
 
   .time-course-content
@@ -446,6 +443,37 @@
   .result-slider-box__name
     font-size: 28px
 
+  .doctor-photo
+    height: 568px
+
+  .license-slider__nav
+    margin: 48px 0 0
+
+  .documents-content
+    margin: 0 0 48px
+    text-align: center
+    h3
+      max-width: 600px
+      margin: 0 auto 16px
+
+  .documents
+    h2
+      text-align: center
+
+  .about-section
+    padding-bottom: 48px
+
+  .about-section__content
+    .box-text
+      text-align: center
+
+  .about-section__img
+    margin: 48px auto 0
+    height: 493px
+
+  .certificate-box
+    width: calc(50% - 6px)
+
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px)
   .reviews-slider .slick-active + .slick-active .reviews-box, .reviews-box, .reviews-slider .slick-center + .slick-active + .slick-active .reviews-box
@@ -532,6 +560,17 @@
 
   .result-slider-box__img
     height: 300px
+
+  .license-slider__nav
+    justify-content: center
+
+  .license-slider h3
+    margin: 0 auto 16px
+    max-width: 500px
+    text-align: center
+
+  .documents-content
+    margin: 0 0 32px
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 576px)
@@ -651,8 +690,11 @@
     .btn
       margin: 33px auto 0
 
-  .range-slider
+  .range-wrap
     max-width: 460px
+
+  .radio
+    margin: 0 60px 0 0
 
   .reviews-slider .slick-active.slick-center .reviews-box, .reviews-slider .slick-active + .slick-active .reviews-box, .reviews-box, .reviews-slider .slick-center + .slick-active + .slick-active .reviews-box
     opacity: 1
@@ -733,6 +775,30 @@
   .result-slider-box
     width: 100%
 
+  .history-box
+    border-top: 1px solid $accent
+    padding: 40px 0 0
+    margin: 0 0 64px
+    &:before
+      top: -16px
+
+  .history-wrapper
+    border: none
+    &:before
+      display: none
+
+  .about-section
+    padding-bottom: 72px
+    h1
+      max-width: 500px
+
+  .about-section__img
+    height: 310px
+    margin: 32px auto 0
+
+
+
+
 @media only screen and (max-width: 420px)
   .home-img
     max-width: 310px
@@ -804,10 +870,11 @@
   .time-course__img
     height: 186px
 
-  .range-tick
+  .radio
     font-size: 18px
+    margin: 0 40px 0 0
 
-  .range-slider
+  .range-wrap
     max-width: 300px
 
   .reviews-slider .slick-active.slick-center .reviews-box, .reviews-slider .slick-active + .slick-active .reviews-box, .reviews-box, .reviews-slider .slick-center + .slick-active + .slick-active .reviews-box
@@ -859,7 +926,18 @@
   .result-slider-box__img
     height: 250px
 
+  .certificate-box
+    width: 100%
+    margin: 0 auto 12px
+    &:last-child
+      margin: 0 auto
+
+  .license-slider__nav
+    justify-content: flex-start
+    margin: 36px 0 0
+
 /* Custom, iPhone Retina */
-@media only screen and (max-width: 320px)
-  /**/
+@media only screen and (max-width: 350px)
+  .radio
+    margin: 0 30px 0 0
 
