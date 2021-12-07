@@ -73,6 +73,29 @@ $('.clinics-slider').slick({
     ]
 });
 
+$('.video-preview-slider').slick({
+    slidesToShow: 2,
+    prevArrow: '<button type="button" class="slick-prev"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-left"></use></svg></button>',
+    nextArrow: '<button type="button" class="slick-next"><svg class="svg-icon"><use xlink:href="img/sprite.svg#arrow-right"></use></svg></button>',
+    responsive: [
+        {
+            breakpoint: 1120,
+            settings: {
+                arrows: false,
+                autoplay: true,
+                autoplaySpeed: 2000,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+                arrows: false,
+            }
+        }
+    ]
+});
+
 $('.result-slider').slick({
     slidesToShow: 1,
     fade: true,

@@ -12,7 +12,12 @@
       width: 1000px
       left: -130px
 
-@media only screen and (max-width: 1400px)
+@media only screen and (max-width: 1600px)
+  .container
+    max-width: 1280px
+    padding: 0 72px
+
+@media only screen and (max-width: 1500px)
   h1
     font-size: 48px
     margin: 0 0 24px
@@ -129,9 +134,7 @@
     width: 290px
     height: 333px
 
-  .container
-    max-width: 1160px
-    padding: 0 12px
+
 
   .row
     margin: 0 -12px
@@ -206,6 +209,10 @@
     height: 24px
 
 /* Medium Devices, Desktops */
+@media only screen and (max-width: 1250px)
+  .menu li
+    margin: 0 20px 0 0
+
 @media only screen and (max-width: 1200px)
   .doctor-name
     right: 20px
@@ -238,6 +245,15 @@
   .modal-content h3
     font-size: 40px
     line-height: normal
+
+@media only screen and (max-width: 1120px)
+  .container
+    max-width: none
+    padding: 0 18px
+
+
+  .video-preview-slider .slick-current .video-preview, .video-preview
+    margin: 0 auto
 
 @media only screen and (max-width: 992px)
   .home-img
@@ -329,8 +345,9 @@
 
 
   .video-preview
-    margin: 0 0 32px
+    margin: 0 auto
     height: 411px
+    width: 100%
 
   .time-course__img
     height: 460px
@@ -593,6 +610,9 @@
   .documents-content
     margin: 0 0 32px
 
+  .video-preview
+    height: 313px
+
 /* Extra Small Devices, Phones */
 @media only screen and (max-width: 576px)
   .home-img
@@ -696,7 +716,6 @@
     font-size: 14px
 
   .video-preview
-    margin: 0 0 21px
     height: 258px
 
   .btn-play
